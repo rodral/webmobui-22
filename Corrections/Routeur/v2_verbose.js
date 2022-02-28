@@ -20,11 +20,8 @@ function displaySection(){
   // On va itérer tous les éléments de la navigation, pour trouver celui qui nous intéresse
   // et y ajouter la classe active
   domForEach('nav a', (element) => { // selecteur CSS, un lien dans "nav"
-    // on ressort le hash de la partie href pour comparer l'id
-    const elementHash = new URL(element.href).hash
-
     // Si c'est bien l'élément qu'on cherche, on ajoute la classe active ou sinon on l'enlève
-    if(elementHash == sectionId)
+    if(element.hash == sectionId)
       element.classList.add('active')
     else
       element.classList.remove('active')
